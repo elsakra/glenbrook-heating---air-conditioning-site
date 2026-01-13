@@ -1,0 +1,72 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+  primaryCTA?: string;
+  primaryCTALink?: string;
+  secondaryCTA?: string;
+  secondaryCTALink?: string;
+  backgroundImage?: string;
+}
+
+const {
+  title,
+  subtitle,
+  primaryCTA = "Get Free Estimate",
+  primaryCTALink = "/contact",
+  secondaryCTA = "Call Now",
+  secondaryCTALink = "tel:+1-555-HVAC-PRO",
+  backgroundImage
+} = Astro.props;
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700">
+    {backgroundImage && (
+      <div class="absolute inset-0 opacity-20">
+        <img 
+          src={backgroundImage} 
+          alt="" 
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+    )}
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-white/3 rounded-full blur-3xl animate-float" style="animation-delay: -1.5s;"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 container-custom text-center text-white">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0">
+        {title}
+      </h1>
+      <p class="hero-subtitle text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto opacity-0">
+        {subtitle}
+      </p>
+      <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center opacity-0">
+        <a href={primaryCTALink} class="btn-primary text-lg px-8 py-4">
+          {primaryCTA}
+        </a>
+        <a href={secondaryCTALink} class="btn-secondary text-lg px-8 py-4 bg-white/10 border-white text-white hover:bg-white hover:text-primary-600">
+          {secondaryCTA}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>

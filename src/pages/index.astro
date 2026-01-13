@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Glenbrook Heating & Air Conditioning - Professional HVAC Services"
+  description="Expert heating and air conditioning services including installation, repair, and maintenance. 24/7 emergency service. Licensed, insured, and locally trusted."
+>
+  <Header />
+  
+  <main>
+    <Hero 
+      title="Professional HVAC Services You Can Trust"
+      subtitle="Expert heating and air conditioning installation, repair, and maintenance services. Keeping your home comfortable year-round with reliable, efficient solutions."
+    />
+    
+    <Services />
+    <About />
+    <Contact />
+  </main>
+  
+  <Footer />
+</Layout>

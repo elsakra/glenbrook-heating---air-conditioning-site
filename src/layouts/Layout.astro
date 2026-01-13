@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description = 'Professional heating and air conditioning services. Expert HVAC installation, repair, and maintenance for your home comfort needs.', image = '/og-image.jpg' } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Glenbrook Heating & Air Conditioning",
+        "description": "Professional heating and air conditioning services including installation, repair, and maintenance.",
+        "url": "https://glenbrookheating.com",
+        "telephone": "+1-555-HVAC-PRO",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Your City",
+          "addressRegion": "Your State",
+          "postalCode": "12345",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "40.7128",
+          "longitude": "-74.0060"
+        },
+        "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-15:00",
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "40.7128",
+            "longitude": "-74.0060"
+          },
+          "geoRadius": "50000"
+        },
+        "priceRange": "$$",
+        "image": "https://glenbrookheating.com/logo.png"
+      }
+    </script>
+    
+    <title>{title}</title>
+  </head>
+  <body class="antialiased">
+    <slot />
+    <script src="../scripts/animations.ts"></script>
+    
+    <style>
+      .navbar-scrolled {
+        @apply bg-white/95 backdrop-blur-md shadow-lg;
+      }
+    </style>
+  </body>
+</html>

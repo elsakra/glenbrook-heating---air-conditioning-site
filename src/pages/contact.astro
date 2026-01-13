@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Contact Us - Glenbrook Heating & Air Conditioning"
+  description="Contact Glenbrook Heating & Air Conditioning for professional HVAC services. Get a free estimate, schedule service, or call for 24/7 emergency repairs."
+>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-primary-900 to-primary-700 text-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            Contact <span class="text-primary-200">Us</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-primary-100">
+            Ready to improve your home comfort? Get in touch with our expert team for professional HVAC services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form and Info -->
+    <Contact 
+      title="Get Your Free Estimate Today"
+      subtitle="Contact us for professional HVAC services, emergency repairs, or to schedule a consultation. We're here to help with all your heating and cooling needs."
+    />
+
+    <!-- Service Areas -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">Service Areas</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We proudly serve the greater metropolitan area and surrounding communities with professional HVAC services.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Primary Service Area</h3>
+            <p class="text-gray-600">Downtown, Midtown, Uptown, and surrounding neighborhoods within 25 miles</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Extended Service Area</h3>
+            <p class="text-gray-600">Suburban communities and rural areas within 50 miles (additional travel fees may apply)</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Emergency Service</h3>
+            <p class="text-gray-600">24/7 emergency repairs available throughout our entire service area</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Get answers to common questions about our HVAC services and what to expect when you work with us.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto space-y-8 animate-on-scroll">
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">How quickly can you respond to service calls?</h3>
+            <p class="text-gray-600">
+              For regular service calls, we typically schedule within 24-48 hours. For emergencies, we offer same-day service and are available 24/7 for urgent repairs.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Do you provide free estimates?</h3>
+            <p class="text-gray-600">
+              Yes! We provide free estimates for all installation and replacement projects. For repairs, we charge a diagnostic fee that is applied toward the cost of repairs if you choose to proceed.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">What brands do you work with?</h3>
+            <p class="text-gray-600">
+              We work with all major HVAC brands and are authorized dealers for several top manufacturers. We'll recommend the best system for your needs and budget.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-xl p-8 shadow-lg">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Do you offer financing options?</h3>
+            <p class="text-gray-600">
+              Yes, we offer flexible financing options for qualified customers. Contact us to learn more about our current financing programs and promotional offers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
